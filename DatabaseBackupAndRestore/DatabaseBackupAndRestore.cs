@@ -56,7 +56,8 @@ namespace DatabaseBackupAndRestore
 
         private void btnBackup_Click(object sender, EventArgs e)
         {
-            if (DBUtilities.BackupDatabase(txtBackupPath.Text))
+            btnConnect_Click(null, null);
+            if (DBUtilities.BackupDatabase(txtBackupPath.Text + '\\' + this.database + ".sql"))
                 lblBackupStatus.Text = "Database backup successful!";
             else
                 lblBackupStatus.Text = "Database backup failed!";
@@ -73,13 +74,14 @@ namespace DatabaseBackupAndRestore
         private void btnBrowseBackupPath_Click(object sender, EventArgs e)
         {
             FBD.ShowDialog();
-            txtBackupPath.Text = FBD.SelectedPath + '\\' + this.database + ".sql";
+            txtBackupPath.Text = FBD.SelectedPath;
             settings.Default.BackupLocation = FBD.SelectedPath;
             settings.Default.Save();
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
+            btnConnect_Click(null, null);
             if (DBUtilities.RestoreDatabase(txtRestoreFile.Text))
                 lblRestoreStatus.Text = "Database restore successful!";
             else

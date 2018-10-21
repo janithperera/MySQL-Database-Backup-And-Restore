@@ -27,7 +27,7 @@
     <ProductName>MySQL Database Backup and Restore</ProductName>
     <PublisherName>JC Creations</PublisherName>
     <SuiteName>JC Creations</SuiteName>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
