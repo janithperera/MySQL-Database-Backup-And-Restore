@@ -43,9 +43,15 @@ namespace DatabaseBackupAndRestore
             con = DBConnection.GetConnection();
 
             if (con == null)
+            {
                 lblConnectionStatus.Text = "Connection unsuccessful!";
+                lblStatus.Text = "Connection unsuccessful!";
+            }
             else
+            {
                 lblConnectionStatus.Text = "Connection successful!";
+                lblStatus.Text = "SERVER : " + this.server + " | DATABASE : " + this.database + " | USERNAME : " + this.username + " : Connected!";
+            }
         }
 
         private void btnBackup_Click(object sender, EventArgs e)
@@ -89,6 +95,8 @@ namespace DatabaseBackupAndRestore
 
             txtBackupPath.Text = settings.Default.BackupLocation;
             txtRestoreFile.Text = settings.Default.BackupFile;
+
+            lblStatus.Text = "Form initialized!";
         }
     }
 }
