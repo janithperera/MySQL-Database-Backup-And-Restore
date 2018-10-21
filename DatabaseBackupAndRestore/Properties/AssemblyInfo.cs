@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DatabaseBackupAndRestore")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("MySQL Database Backup and Restore tool")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("JC Creations")]
 [assembly: AssemblyProduct("DatabaseBackupAndRestore")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright ©  2018 JC Creations")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

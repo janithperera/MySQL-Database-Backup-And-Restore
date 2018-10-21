@@ -29,28 +29,30 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblConnectionStatus = new System.Windows.Forms.Label();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDatabaseName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtServer = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtBackupPath = new System.Windows.Forms.Label();
+            this.btnBrowseBackupPath = new System.Windows.Forms.Button();
             this.lblBackupStatus = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.btnBackup = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRestoreFile = new System.Windows.Forms.Label();
+            this.btnBrowseBackupFile = new System.Windows.Forms.Button();
+            this.lblRestoreStatus = new System.Windows.Forms.Label();
+            this.btnRestore = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.OFD = new System.Windows.Forms.OpenFileDialog();
+            this.FBD = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,14 +61,14 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblConnectionStatus);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.btnConnect);
+            this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtDatabaseName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtServer);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -77,73 +79,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATABASE CONNECTION";
             // 
-            // label1
+            // lblConnectionStatus
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SERVER NAME";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblConnectionStatus.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConnectionStatus.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.lblConnectionStatus.Location = new System.Drawing.Point(6, 148);
+            this.lblConnectionStatus.Name = "lblConnectionStatus";
+            this.lblConnectionStatus.Size = new System.Drawing.Size(523, 25);
+            this.lblConnectionStatus.TabIndex = 7;
+            this.lblConnectionStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // btnConnect
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(136, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(513, 25);
-            this.textBox1.TabIndex = 1;
+            this.btnConnect.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.Location = new System.Drawing.Point(535, 146);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(114, 28);
+            this.btnConnect.TabIndex = 5;
+            this.btnConnect.Text = "CONNECT";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(136, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(513, 25);
-            this.textBox2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(6, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "DATABASE NAME";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(136, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(513, 25);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(6, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "USER NAME";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(136, 115);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(513, 25);
-            this.textBox4.TabIndex = 7;
+            this.txtPassword.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(136, 115);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(513, 25);
+            this.txtPassword.TabIndex = 4;
             // 
             // label4
             // 
@@ -157,32 +120,72 @@
             this.label4.Text = "PASSWORD";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // txtUsername
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(535, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 28);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "CONNECT";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtUsername.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(136, 84);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(513, 25);
+            this.txtUsername.TabIndex = 3;
             // 
-            // lblConnectionStatus
+            // label3
             // 
-            this.lblConnectionStatus.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConnectionStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblConnectionStatus.Location = new System.Drawing.Point(6, 148);
-            this.lblConnectionStatus.Name = "lblConnectionStatus";
-            this.lblConnectionStatus.Size = new System.Drawing.Size(523, 25);
-            this.lblConnectionStatus.TabIndex = 7;
-            this.lblConnectionStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(6, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(131, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "USER NAME";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtDatabaseName
+            // 
+            this.txtDatabaseName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDatabaseName.Location = new System.Drawing.Point(136, 53);
+            this.txtDatabaseName.Name = "txtDatabaseName";
+            this.txtDatabaseName.Size = new System.Drawing.Size(513, 25);
+            this.txtDatabaseName.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(6, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "DATABASE NAME";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtServer
+            // 
+            this.txtServer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServer.Location = new System.Drawing.Point(136, 22);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(513, 25);
+            this.txtServer.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SERVER NAME";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.txtBackupPath);
+            this.groupBox2.Controls.Add(this.btnBrowseBackupPath);
             this.groupBox2.Controls.Add(this.lblBackupStatus);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.btnBackup);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -192,6 +195,28 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATABASE BACKUP";
+            // 
+            // txtBackupPath
+            // 
+            this.txtBackupPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBackupPath.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBackupPath.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtBackupPath.Location = new System.Drawing.Point(136, 22);
+            this.txtBackupPath.Name = "txtBackupPath";
+            this.txtBackupPath.Size = new System.Drawing.Size(464, 25);
+            this.txtBackupPath.TabIndex = 8;
+            this.txtBackupPath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnBrowseBackupPath
+            // 
+            this.btnBrowseBackupPath.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowseBackupPath.Location = new System.Drawing.Point(606, 22);
+            this.btnBrowseBackupPath.Name = "btnBrowseBackupPath";
+            this.btnBrowseBackupPath.Size = new System.Drawing.Size(43, 28);
+            this.btnBrowseBackupPath.TabIndex = 6;
+            this.btnBrowseBackupPath.Text = "...";
+            this.btnBrowseBackupPath.UseVisualStyleBackColor = true;
+            this.btnBrowseBackupPath.Click += new System.EventHandler(this.btnBrowseBackupPath_Click);
             // 
             // lblBackupStatus
             // 
@@ -203,23 +228,16 @@
             this.lblBackupStatus.TabIndex = 7;
             this.lblBackupStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button2
+            // btnBackup
             // 
-            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(535, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 28);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "BACKUP";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(136, 22);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(464, 25);
-            this.textBox8.TabIndex = 1;
+            this.btnBackup.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackup.Location = new System.Drawing.Point(535, 56);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(114, 28);
+            this.btnBackup.TabIndex = 7;
+            this.btnBackup.Text = "BACKUP";
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // label9
             // 
@@ -233,22 +251,12 @@
             this.label9.Text = "BACKUP PATH";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(606, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(43, 28);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.txtRestoreFile);
+            this.groupBox3.Controls.Add(this.btnBrowseBackupFile);
+            this.groupBox3.Controls.Add(this.lblRestoreStatus);
+            this.groupBox3.Controls.Add(this.btnRestore);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -259,43 +267,48 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DATABASE RESTORE";
             // 
-            // button4
+            // txtRestoreFile
             // 
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(606, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(43, 28);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "...";
-            this.button4.UseVisualStyleBackColor = true;
+            this.txtRestoreFile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRestoreFile.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRestoreFile.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtRestoreFile.Location = new System.Drawing.Point(136, 22);
+            this.txtRestoreFile.Name = "txtRestoreFile";
+            this.txtRestoreFile.Size = new System.Drawing.Size(464, 25);
+            this.txtRestoreFile.TabIndex = 10;
+            this.txtRestoreFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // btnBrowseBackupFile
             // 
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(3, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(523, 25);
-            this.label5.TabIndex = 7;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBrowseBackupFile.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowseBackupFile.Location = new System.Drawing.Point(606, 22);
+            this.btnBrowseBackupFile.Name = "btnBrowseBackupFile";
+            this.btnBrowseBackupFile.Size = new System.Drawing.Size(43, 28);
+            this.btnBrowseBackupFile.TabIndex = 8;
+            this.btnBrowseBackupFile.Text = "...";
+            this.btnBrowseBackupFile.UseVisualStyleBackColor = true;
+            this.btnBrowseBackupFile.Click += new System.EventHandler(this.btnBrowseBackupFile_Click);
             // 
-            // button5
+            // lblRestoreStatus
             // 
-            this.button5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(535, 56);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 28);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "RESTORE";
-            this.button5.UseVisualStyleBackColor = true;
+            this.lblRestoreStatus.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRestoreStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblRestoreStatus.Location = new System.Drawing.Point(3, 58);
+            this.lblRestoreStatus.Name = "lblRestoreStatus";
+            this.lblRestoreStatus.Size = new System.Drawing.Size(523, 25);
+            this.lblRestoreStatus.TabIndex = 7;
+            this.lblRestoreStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox5
+            // btnRestore
             // 
-            this.textBox5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(136, 22);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(464, 25);
-            this.textBox5.TabIndex = 1;
+            this.btnRestore.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.Location = new System.Drawing.Point(535, 56);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(114, 28);
+            this.btnRestore.TabIndex = 9;
+            this.btnRestore.Text = "RESTORE";
+            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // label6
             // 
@@ -309,6 +322,10 @@
             this.label6.Text = "BACKUP FILE";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // OFD
+            // 
+            this.OFD.FileName = "backup.sql";
+            // 
             // DatabaseBackupAndRestore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,12 +336,11 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "DatabaseBackupAndRestore";
             this.Text = "MySQL Database Backup & Restore";
+            this.Load += new System.EventHandler(this.DatabaseBackupAndRestore_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -332,28 +348,30 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblConnectionStatus;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDatabaseName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnBrowseBackupPath;
         private System.Windows.Forms.Label lblBackupStatus;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button btnBrowseBackupFile;
+        private System.Windows.Forms.Label lblRestoreStatus;
+        private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.OpenFileDialog OFD;
+        private System.Windows.Forms.FolderBrowserDialog FBD;
+        private System.Windows.Forms.Label txtBackupPath;
+        private System.Windows.Forms.Label txtRestoreFile;
     }
 }
 
